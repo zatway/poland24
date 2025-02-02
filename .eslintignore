@@ -1,0 +1,12 @@
+# Игнорируем конфигурационные файлы
+.eslintrc.js
+i18next-scanner.config.js
+webpack.config.js
+
+# Игнорируем папку node_modules
+node_modules/
+
+# Игнорируем папку сборки (если есть)
+dist/
+
+srs/index.tsx
