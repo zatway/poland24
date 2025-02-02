@@ -9,4 +9,4 @@ node_modules/
 # Игнорируем папку сборки (если есть)
 dist/
 
-srs/index.tsx
+src/index.tsx
