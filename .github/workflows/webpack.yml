@@ -30,8 +30,3 @@ jobs:
 
       - name: Build for Development
         run: npm run build:dev
-
-      - name: Start Development Server
-        run: npm start
-        env:
-          NODE_ENV: development
