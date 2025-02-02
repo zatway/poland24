@@ -1,14 +1,21 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import {useTranslation} from 'react-i18next';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LoginPage from "./components/pages/Auth/LoginPage";
 
 const App: React.FC = () => {
-  const { t } = useTranslation();
+    const {t} = useTranslation();
 
-  return (
-    <div>
-      <h1>{t('loading')}</h1>
-    </div>
-  );
+    return (
+        <Router>
+            <div className="App" data-testid="app-container">
+                <Routes>
+                    <Route path="/" element={<LoginPage />} />
+                    <Route path="/MainPage" element={<>asdasdas</>}/>
+                </Routes>
+            </div>
+        </Router>
+    );
 };
 
 export default App;
