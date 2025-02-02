@@ -15,14 +15,47 @@ jobs:
         node-version: [18.x, 20.x, 22.x]
 
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: Build
-      run: |
-        npm install  
-        npm run build:prod
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Lint
+        run: npm run lint
+
+      - name: Build for Development
+        run: npm run build:dev
+
+      - name: Start Development Server
+        run: npm start
+        env:
+          NODE_ENV: development
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build for Production
+        run: npm run build:prod
+
+      - name: Deploy
+        run: |
+          echo "Deploying to production..."
+          # Add your deployment commands here
+          # For example, if you're using SSH:
+          # ssh user@host 'cd /path/to/project && git pull && npm install && npm run build:prod'
