@@ -1,13 +1,17 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import MainPage from "./pages/MainPage";
+import {CssBaseline, ThemeProvider, useTheme} from "@mui/material";
+import AppTheme from "./theme"
 
 const App: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <div>
-      <h1>{t('loading')}</h1>
-    </div>
+    <ThemeProvider theme={AppTheme}>
+      <CssBaseline />
+      <MainPage />
+    </ThemeProvider>
   );
 };
 

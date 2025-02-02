@@ -1,11 +1,18 @@
 import React from 'react';
-import {TextField} from "@mui/material";
+import {AppBar, Box, Container, TextField, Toolbar, Typography, useTheme} from "@mui/material";
 
 const MainPage = () => {
+
     return (
-        <div>
-            <TextField></TextField>
-        </div>
+        <AppBar>
+            <Container maxWidth="lg">
+                <Toolbar>
+                    <Box component="div">
+                        <Typography variant="h1">Что-то</Typography>
+                    </Box>
+                </Toolbar>
+            </Container>
+        </AppBar>
     );
 };
 
