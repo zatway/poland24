@@ -1,7 +1,10 @@
 import React from 'react';
 import {useTranslation} from 'react-i18next';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import LoginPage from "./components/pages/Auth/LoginPage";
+import LoginPage from "./components/pages/Auth/LoginDialog";
+import LoginDialog from "./components/pages/Auth/LoginDialog";
+import RegistrationDialog from "./components/pages/Auth/RegistrationDialog";
+import OrderDialog from "./components/OrderDialog";
 
 const App: React.FC = () => {
     const {t} = useTranslation();
@@ -9,10 +12,7 @@ const App: React.FC = () => {
     return (
         <Router>
             <div className="App" data-testid="app-container">
-                <Routes>
-                    <Route path="/" element={<LoginPage />} />
-                    <Route path="/MainPage" element={<>asdasdas</>}/>
-                </Routes>
+                <LoginDialog open={true} onClose={() => {}}></LoginDialog>
             </div>
         </Router>
     );
