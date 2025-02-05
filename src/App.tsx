@@ -8,11 +8,13 @@ const App: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <ThemeProvider theme={AppTheme}>
-      <CssBaseline />
-      <MainPage />
-    </ThemeProvider>
-  );
+      <>
+          <ThemeProvider theme={AppTheme}>
+              <CssBaseline />
+              <MainPage />
+          </ThemeProvider>
+      </>
+      );
 };
 
 export default App;

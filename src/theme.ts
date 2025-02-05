@@ -1,5 +1,18 @@
-import {createTheme, ThemeOptions} from "@mui/material";
+import {createTheme, PaletteColor, ThemeOptions} from "@mui/material";
 
+declare module "@mui/material/styles" {
+    interface PaletteColor {
+        900?: string; // Добавляем поддержку кастомных оттенков
+        800?: string; // Добавляем поддержку кастомных оттенков
+        700?: string; // Добавляем поддержку кастомных оттенков
+        600?: string; // Добавляем поддержку кастомных оттенков
+        500?: string; // Добавляем поддержку кастомных оттенков
+        400?: string; // Добавляем поддержку кастомных оттенков
+        300?: string; // Добавляем поддержку кастомных оттенков
+        200?: string; // Добавляем поддержку кастомных оттенков
+        100?: string; // Добавляем поддержку кастомных оттенков
+    }
+}
 const AppTheme: ThemeOptions = createTheme({
     palette: {
         primary: {
@@ -60,11 +73,33 @@ const AppTheme: ThemeOptions = createTheme({
         }
     },
     typography: {
-        fontFamily: "Rubik, serif",
+        fontFamily: "Roboto, sans-serif",
         h1: {
             fontSize: "40px",
             fontWeight: 900,
             color: "#2D2D2D"
+        },
+        h4: {
+            fontSize: "16px",
+            fontWeight: "bold",
+            color: "black"
+        },
+        body1: {
+            fontSize: "16px",
+            color: "#596266",
+            fontWeight: 500
+        },
+        body2: {
+            display: 'flex',
+            alignItems: 'center',
+            gap: 0.5,
+            mt: 0.5,
+        },
+        button: {
+            fontSize: "14px",
+            color: "#fff",
+            fontWeight: "bold",
+            textTransform: 'none'
         }
     },
     components: {
@@ -72,7 +107,38 @@ const AppTheme: ThemeOptions = createTheme({
             styleOverrides: {
                 root: {
                     background: "#ffffff",
-                    boxShadow: "0px 4px 22px 0px rgba(34, 60, 80, 0.2)"
+                    boxShadow: "0px 4px 22px 0px rgba(34, 60, 80, 0.2)",
+                    color: 'black',
+                    py: 1,
+                }
+            }
+        },
+        MuiToolbar: {
+            styleOverrides: {
+                root: {
+                    display: "flex",
+                    flexWrap: 'wrap',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    gap: 2,
+                }
+            }
+        },
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    fontSize: '1rem',
+                    padding: '8px 16px',
+                    whiteSpace: 'nowrap',
+                }
+            }
+        },
+        MuiLink: {
+            styleOverrides: {
+                root: {
+                    textDecoration: 'none',
+                    color: "#2D2D2D",
+                    fontWeight: 'bold',
                 }
             }
         }
