@@ -2,10 +2,8 @@ import Header from "../components/Header";
 import {Box, Button, Container, TextField, Typography} from "@mui/material";
 import React from "react";
 import Features from "../components/Feature/Features";
-//import classes from './MainPage.module.css'
 
 const MainPage = () => {
-
 
     return (
         <>
@@ -28,10 +26,6 @@ const MainPage = () => {
                                 display: 'flex',
                                 alignItems: 'center',
                                 gap: '1rem',
-                                // padding: '0.5rem',
-                                // border: '6px solid red',
-                                // borderRadius: '15px',
-                                // boxSizing: 'content-box',
                             }}
                         >
                             <TextField  placeholder="Вставить ссылку на товар" variant="outlined"
