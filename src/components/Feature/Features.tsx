@@ -1,4 +1,4 @@
-import { Stack, Paper, Typography, keyframes } from "@mui/material";
+import { Stack, Paper, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 
 const features = [
@@ -40,10 +40,6 @@ const VerticalText = styled(Typography)({
     fontWeight: "bold",
     textAlign: "start",
 });
-
-const Icon = styled(Typography)({
-
-})
 
 export default function Features() {
     return (
